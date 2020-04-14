@@ -10,9 +10,6 @@ getwd()
 library(nlme)
 library(lme4)
 library(ggplot2)
-library(emmeans)
-library(grid)
-library(gridExtra)
 
 #Load your data (in CSV format) and check to make sure R uploaded it correctly.
 
@@ -59,12 +56,12 @@ dev.off()
 #Now, let's create section (B) for our figure! Again, begin by calling on the tiff function
   
   tiff("Hatchlingmass.tiff", width = 8, height = 6, units = 'in', res = 300)
+
+#Here we are plotting hatchling mass against eff mass
   
 hatchlingmass <- ggplot() +
-    geom_point(data=rem1, aes(x=EMASSBEF, y=MASSBEF), shape=1) +
-    geom_point(data=Nrem1, aes(x=EMASSBEF, y=MASSBEF)) +
-    geom_smooth(data=rem1, aes(x=EMASSBEF, y=MASSBEF), method=lm,se=FALSE, color="black",linetype="dashed") +
-    geom_smooth(data=Nrem1, aes(x=EMASSBEF, y=MASSBEF), method=lm,se=FALSE, color="black") +
+    geom_point(data=datum4, aes(x=EMASSBEF, y=MASSBEF), shape=1) +
+    geom_smooth(data=datum4, aes(x=EMASSBEF, y=MASSBEF), method=lm,se=FALSE, color="black") +
     theme_classic() +
     labs(title="", x="Egg mass (g) at oviposition", y="Hatchling mass (g)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.25)) +
@@ -72,18 +69,18 @@ hatchlingmass <- ggplot() +
           axis.text.x  = element_text(size=8,color="black"),
           axis.title.y = element_text(size=10,vjust=3),
           axis.text.y  = element_text(size=8,color="black")) 
+
+#Turn off the tiff function with this.
+
+dev.off()
   
-  dev.off()
+#Lastly, make section (C) of our figure! This will show hatchling snout-vent length (SVL). 
   
-  #hatchling svl graph
-  
-  tiff("hatchlingsvl.tiff", width = 8, height = 6, units = 'in', res = 300)
+tiff("hatchlingsvl.tiff", width = 8, height = 6, units = 'in', res = 300)
   
 hatchlingsvl <- ggplot() +
-    geom_point(data=rem1, aes(x=EMASSBEF, y=SVL), shape=1) +
-    geom_point(data=Nrem1, aes(x=EMASSBEF, y=SVL)) +
-    geom_smooth(data=rem1, aes(x=EMASSBEF, y=SVL), method=lm,se=FALSE, color="black", linetype="dashed") +
-    geom_smooth(data=Nrem1, aes(x=EMASSBEF, y=SVL), method=lm,se=FALSE, color="black") +
+    geom_point(data=datum4, aes(x=EMASSBEF, y=SVL), shape=1) +
+    geom_smooth(data=datum4, aes(x=EMASSBEF, y=SVL), method=lm,se=FALSE, color="black") +
     theme_classic() +
     labs(title="", x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.25)) +
@@ -92,29 +89,27 @@ hatchlingsvl <- ggplot() +
           axis.title.y = element_text(size=10,vjust=3),
           axis.text.y  = element_text(size=8,color="black")) 
   
-  dev.off()
+dev.off()
   
-  #add them all to 1 figure!
+#To combine them all to 1 figure, follow this script below.
   
-  hatchlingmass1 <- arrangeGrob(hatchlingmass, top = textGrob("a)", x = unit(0.10, "npc")
+hatchlingmass1 <- arrangeGrob(hatchlingmass, top = textGrob("a)", x = unit(0.10, "npc")
                                                  , y = unit(0, "npc"), just=c("left","top"),
                                                  gp=gpar(col="black", fontsize=15)))
   
-  hatchlingsvl1 <- arrangeGrob(hatchlingsvl, top = textGrob("b)", x = unit(0.10, "npc")
+hatchlingsvl1 <- arrangeGrob(hatchlingsvl, top = textGrob("b)", x = unit(0.10, "npc")
                                                  , y = unit(0, "npc"), just=c("left","top"),
                                                  gp=gpar(col="black", fontsize=15)))
   
-  bodycondition1 <- arrangeGrob(bodycondition, top = textGrob("c)", x = unit(0.10, "npc")
+bodycondition1 <- arrangeGrob(bodycondition, top = textGrob("c)", x = unit(0.10, "npc")
                                                               , y   = unit(0, "npc"), just=c("left","top"),
                                                               gp=gpar(col="black", fontsize=15)))
   
-  tiff("Figure1.tiff", width = 4, height = 6, units = 'in', res = 300)
+tiff("Figure1.tiff", width = 4, height = 6, units = 'in', res = 300)
   
-  grid.arrange(hatchlingmass1, hatchlingsvl1, bodycondition1, ncol = 1)
   
-  dev.off()
-
-#how to insert an annotation
-
-annotate(geom="text",x=0.95,
-         y=0.05,label="Treatment", color="black") +
+#Arrange them in the figure using this command.
+grid.arrange(hatchlingmass1, hatchlingsvl1, bodycondition1, ncol = 1)
+  
+#Run dev.off, and check out the cool figure in your working directory.
+dev.off()
