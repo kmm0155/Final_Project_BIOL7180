@@ -5,6 +5,12 @@
 setwd("/Users/kaitlynmurphy/Desktop/JD")
 getwd()
 
+#Install these packages!
+
+install.packages('nlme')
+install.packages('lme4')
+install.packages('ggplot2')
+
 #Call on the libraries we will be using in this script.
 
 library(nlme)
