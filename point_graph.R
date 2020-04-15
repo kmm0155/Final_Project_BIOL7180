@@ -23,7 +23,7 @@ datum=read.csv(file.choose())
 head(datum)
 
 #Begin by running a basic linear mixed-effects model and call on the summary to see the results.
-#Here I am graphing the log of hatchling mass to hatchling snout-vent length (SVL).
+#Here I am analyzing the log of hatchling mass to hatchling snout-vent length (SVL).
   
 resultshatchmass=lme(log(MASSBEF)~log(SVL),data=datum,random=~1|MOM,na.action=na.omit)
 summary(resultshatchmass)
@@ -94,7 +94,6 @@ bodycondition1 <- arrangeGrob(bodycondition, top = textGrob("c)", x = unit(0.10,
                                                   gp=gpar(col="black", fontsize=15)))
   
 tiff("Figure1.tiff", width = 4, height = 6, units = 'in', res = 300)
-  
   
 #Arrange them in the figure using this command.
 grid.arrange(hatchlingmass1, hatchlingsvl1, bodycondition1, ncol = 1)
