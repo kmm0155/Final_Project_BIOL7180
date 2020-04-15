@@ -20,7 +20,8 @@ head(datum)
 
 #add the data and axes to the graph
 MomVsEggMass <- ggplot(data=datum,aes(x=MOM,y=EGGMASS)) +
-    geom_bar(stat="identity")
+    geom_bar(stat="identity",fill="steelblue") +
+    theme_minimal()
 MomVsEggMass
 #,data=datum,aes(x=MOM,y=EGGMASS,color="black") +
 #    theme_classic() +
