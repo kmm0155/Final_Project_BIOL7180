@@ -10,12 +10,16 @@ getwd()
 install.packages('nlme')
 install.packages('lme4')
 install.packages('ggplot2')
+install.packages('grid')
+install.pacakges('gridExtra')
 
 #Call on the libraries we will be using in this script.
 
 library(nlme)
 library(lme4)
 library(ggplot2)
+library(grid)
+library(gridExtra)
 
 #Load your data (in CSV format) and check to make sure R uploaded it correctly.
 
@@ -25,25 +29,25 @@ head(datum)
 #Begin by running a basic linear mixed-effects model and call on the summary to see the results.
 #Here I am analyzing the log of hatchling mass to hatchling snout-vent length (SVL).
   
-resultshatchmass=lme(log(MASSBEF)~log(SVL),data=datum,random=~1|MOM,na.action=na.omit)
+resultshatchmass=lme(log(MASS)~log(SVL),data=datum,random=~1|MOM,na.action=na.omit)
 summary(resultshatchmass)
 
 #Next, we need to convert these values into residuals that we can plot. Do this first by creating a new dataset (datum4)
-datum4 <- datum[complete.cases(datum[,"MASSBEF"]),]
+datum4 <- datum[complete.cases(datum[,"MASS"]),]
 
 #Next, add a column wihtin the dataset that is the residuals of the linear mixed-effects model. 
 datum4$resids <- resid(resultshatchmass)
 
 #Check out a very basic boxplot of these data.
-plot(resids~EMASSBEF,datum4)
+plot(resids~EGGMASS,datum4)
 
 #Now let's graph this with GGPLOT! I will be making three graphs in one figure. 
 
 #Create the varibale that will be section (A) in our figure.
 
 bodycondition <- ggplot() +
-    geom_point(data=datum4, aes(x=EMASSBEF, y=resids), shape=1) +
-    geom_smooth(data=datum4, aes(x=EMASSBEF, y=resids), method=lm,se=FALSE, color="black") +
+    geom_point(data=datum4, aes(x=EGGMASS, y=resids), shape=1) +
+    geom_smooth(data=datum4, aes(x=EGGMASS, y=resids), method=lm,se=FALSE, color="black") +
     theme_classic() +
     labs(title="", x="Egg mass (g) at oviposition", y="Hatchling body condition") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.25)) +
@@ -56,8 +60,8 @@ bodycondition <- ggplot() +
 #Here we are plotting hatchling mass against eff mass
   
 hatchlingmass <- ggplot() +
-    geom_point(data=datum4, aes(x=EMASSBEF, y=MASSBEF), shape=1) +
-    geom_smooth(data=datum4, aes(x=EMASSBEF, y=MASSBEF), method=lm,se=FALSE, color="black") +
+    geom_point(data=datum4, aes(x=EGGMASS, y=MASS), shape=1) +
+    geom_smooth(data=datum4, aes(x=EGGMASS, y=MASS), method=lm,se=FALSE, color="black") +
     theme_classic() +
     labs(title="", x="Egg mass (g) at oviposition", y="Hatchling mass (g)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.25)) +
@@ -69,8 +73,8 @@ hatchlingmass <- ggplot() +
 #Lastly, make section (C) of our figure! This will show hatchling snout-vent length (SVL). 
   
 hatchlingsvl <- ggplot() +
-    geom_point(data=datum4, aes(x=EMASSBEF, y=SVL), shape=1) +
-    geom_smooth(data=datum4, aes(x=EMASSBEF, y=SVL), method=lm,se=FALSE, color="black") +
+    geom_point(data=datum4, aes(x=EGGMASS, y=SVL), shape=1) +
+    geom_smooth(data=datum4, aes(x=EGGMASS, y=SVL), method=lm,se=FALSE, color="black") +
     theme_classic() +
     labs(title="", x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.25)) +
