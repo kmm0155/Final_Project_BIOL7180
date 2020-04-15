@@ -1,4 +1,4 @@
-#!usr/bin/R #whatever the she-bang line is supposed to be
+#!/usr/bin/Rscript
 
 #this is a script that will create a bar graph from example qPCR data.
 #this script is one part of a larger script that will incorporate several
