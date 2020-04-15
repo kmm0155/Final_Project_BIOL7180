@@ -19,8 +19,8 @@ head(datum)
 #tiff("MomVsEggMass.tiff",width=8,height=6,units='in',res=300)
 
 #add the data and axes to the graph
-MomVsEggMass <- ggplot(data=datum,aes(x=MOM,y=EGGMASS,fill=EGGID)) +
-    geom_bar(stat="identity",position=position_dodge())
+MomVsEggMass <- ggplot(data=datum,aes(x=MOM,y=AVGEGGMASS)) +
+    geom_bar(stat="identity")
 MomVsEggMass
 #,data=datum,aes(x=MOM,y=EGGMASS,color="black") +
 #    theme_classic() +
