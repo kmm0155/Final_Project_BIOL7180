@@ -10,3 +10,15 @@ getwd()
 # Upload your CSV file containing data
 datum=read.csv(file.choose()))
 
+
+# View data to make sure it was uploaded correctly 
+head(datum)
+
+# Create a tiff file for your graph
+tiff("Line_Graph.tiff",width=8,height=6,units='in',res=300)
+
+# Using GGplot, add the data and axes to the graph
+Line_Graph <- ggplot(data=datum, aes(x="Hatchling Mass (g)",y="Hatchling SVL (mm)")) +
+    geom_line(stat=
+    theme_minimal() +
+    labs(title=
