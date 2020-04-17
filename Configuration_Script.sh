@@ -39,3 +39,6 @@ print("Enter plot type preference: ") plotnumber
 # If Option 2- Point Graph is chosen:
 
 # If Option 3- Line Graph is chosen:
+
+
+# Choose Output (.png, tiff, .jpeg) 
