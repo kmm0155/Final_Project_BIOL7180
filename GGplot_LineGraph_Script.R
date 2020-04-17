@@ -7,3 +7,6 @@
 setwd("/home/aubcls98/Final_Project_BIOL7180")
 getwd()
 
+# Upload your CSV file containing data
+datum=read.csv(file.choose()))
+
