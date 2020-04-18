@@ -1,3 +1,5 @@
+#!/usr/bin/Rscript
+
 #This page will describe an efficient and useful way to create manuscript-ready graphs using GGplot.
 #The below script would be run in R/R Studio.
 
