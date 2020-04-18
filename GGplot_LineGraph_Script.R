@@ -13,18 +13,6 @@ datum=read.csv(file.choose()))
 # View data to make sure it was uploaded correctly 
 head(datum)
 
-# Run a basic linear mixed-effects model- This will analyze the log of hatchling mass to hatchling snout-vent length (SVL)
-resultshatchmass=lme(log(MASS)~log(SVL),data=datum,random=1|MOM,na.action=na.omit)
-
-# View the summary to see the results of this linear mixed-effect model
-summary(resultshatchmass)
-
-# Convert the datum values into residuals that can be plotted- In order to do this a new data set needs to be created
-datum2 <- datum[complete.cases(datum[,"MASS"]),]
-
-# Add a column within your new dataset of the residuals
-datum2$resids <- resid(resultshatchmass)
-
 # Using GGplot, add the data and axes to the graph
 Body_Condition <- ggplot() +
     geom_line(data=datum2, aes(x=EGGMASS,y=resids)) +
