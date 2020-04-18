@@ -1,10 +1,5 @@
 # !/usr/bin/Rscript
 
-if($barpng) {code for bar graph saved as png} else {continue}
-if($bartiff) {code for bar graph saved as tiff} else {continue}
-etc.
-
-
 # Final Project- Creating a Professional 3-D Figure Using GGplot within R
 # Contributors- Tori Coutts, Kaitlyn Murphy, and Megan Roberts
 
@@ -25,6 +20,9 @@ library(ggplot2)
 # Reading the CSV file and making sure R uploaded it correctly
 datum=read.csv(file.choose())
 head (datum)
+
+#if($barpng) {code for bar graph saved as png} else {continue}
+#if($bartiff) {code for bar graph saved as tiff} else {continue}
 
 # Choosing the plotting and output type
 print("1-1 Bar Graph/PNG")
