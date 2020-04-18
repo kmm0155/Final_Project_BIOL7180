@@ -26,14 +26,16 @@ library(ggplot2)
 datum=read.csv(file.choose())
 head (datum)
 
-# Choosing the plotting type
-print("1- Bar Graph")
+# Choosing the plotting and output type
+print("1-1 Bar Graph/PNG")
+print("1-2 Bar Graph/Tiff")
+print("1-3 Bar Graph/JPEG")
 print("2- Point Graph")
 print("3- Line Graph")
 print("Enter plot type preference: ") plotnumber
-if (plotnumber="1") {#go to bar graph script}
-if (plotnumber="2") {#go to point graph script}
-if (plotnumber="3") {#go to line graph script}
+if (plotnumber="1-1") {#go to bar graph script with PNG output}
+if (plotnumber="1-2") {#go to bar graph script with Tiff output}
+if (plotnumber="1-3") {#go to bar graph script with JPEG output}
 
 # If Option 1- Bar Graph is chosen:
 
