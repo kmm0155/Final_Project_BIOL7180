@@ -43,7 +43,6 @@ print("Enter plot type preference: ") plotnumber
 #Here I am analyzing the log of hatchling mass to hatchling snout-vent length (SVL).
   
 resultshatchmass=lme(log(MASS)~log(SVL),data=datum,random=~1|MOM,na.action=na.omit)
-summary(resultshatchmass)
 
 #Next, we need to convert these values into residuals that we can plot. Do this first by creating a new dataset (datum4)
 datum4 <- datum[complete.cases(datum[,"MASS"]),]
@@ -124,7 +123,6 @@ dev.off()
 #Here I am analyzing the log of hatchling mass to hatchling snout-vent length (SVL).
   
 resultshatchmass=lme(log(MASS)~log(SVL),data=datum,random=~1|MOM,na.action=na.omit)
-summary(resultshatchmass)
 
 #Next, we need to convert these values into residuals that we can plot. Do this first by creating a new dataset (datum4)
 datum4 <- datum[complete.cases(datum[,"MASS"]),]
@@ -205,7 +203,6 @@ dev.off()
 #Here I am analyzing the log of hatchling mass to hatchling snout-vent length (SVL).
   
 resultshatchmass=lme(log(MASS)~log(SVL),data=datum,random=~1|MOM,na.action=na.omit)
-summary(resultshatchmass)
 
 #Next, we need to convert these values into residuals that we can plot. Do this first by creating a new dataset (datum4)
 datum4 <- datum[complete.cases(datum[,"MASS"]),]
