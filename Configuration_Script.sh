@@ -6,7 +6,7 @@
 # This script will be used after starting up the R atmosphere in which GGplot will be ran.
 
 # Sets current working directory to where R will be ran and graphs will be saved
-setwd("/Users/Desktop")
+#setwd("/Users/Desktop")
 
 # Installing GGplot, if needed
 print("Do you have GGplot previously installed? (Y/N)") response
