@@ -1,5 +1,10 @@
 # !/usr/bin/Rscript
 
+if($barpng) {code for bar graph saved as png} else {continue}
+if($bartiff) {code for bar graph saved as tiff} else {continue}
+etc.
+
+
 # Final Project- Creating a Professional 3-D Figure Using GGplot within R
 # Contributors- Tori Coutts, Kaitlyn Murphy, and Megan Roberts
 
