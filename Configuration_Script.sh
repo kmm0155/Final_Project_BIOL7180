@@ -10,11 +10,9 @@ setwd("/Users/Desktop")
 
 # Installing GGplot, if needed
 print("Do you have GGplot previously installed? (Y/N)") response
-if($response="N") {install.packages('ggplot2')}
-else {continue}
-#if($response="Y") {continue}
+if($response="Y") {continue} else {install.packages('ggplot2')}
 
-# if(condition1 && condition2) { expression }
+if(condition1 && condition2) { expression }
 
 # Starting up GGplot
 library(ggplot2)
