@@ -4,7 +4,7 @@
 # This script is also set up to be ran individually if desired
 
 # Set working directory and where to save your graph
-setwd("/home/aubcls98/Final_Project_BIOL7180")
+setwd("/Users/MeganRoberts/Desktop")
 getwd()
 
 # Upload your CSV file containing data
