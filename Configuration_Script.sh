@@ -1,12 +1,9 @@
-# !/bin/bash
+# !/usr/bin/Rscript
 
 # Final Project- Creating a Professional 3-D Figure Using GGplot within R
 # Contributors- Tori Coutts, Kaitlyn Murphy, and Megan Roberts
 
-# This script will be used to set up the R atmosphere in which GGplot will be ran.
-
-# Starting up R
-R
+# This script will be used after starting up the R atmosphere in which GGplot will be ran.
 
 # Sets current working directory to where R will be ran and graphs will be saved
 setwd("/Users/Desktop")
