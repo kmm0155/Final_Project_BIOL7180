@@ -30,12 +30,22 @@ head (datum)
 print("1-1 Bar Graph/PNG")
 print("1-2 Bar Graph/Tiff")
 print("1-3 Bar Graph/JPEG")
-print("2- Point Graph")
-print("3- Line Graph")
+print("2-1 Point Graph/PNG")
+print("2-2 Point Graph/Tiff")
+print("2-3 Point Graph/JPEG")
+print("3-1 Line Graph/PNG")
+print("3-2 Line Graph/Tiff")
+print("3-3 Line Graph/JPEG")
 print("Enter plot type preference: ") plotnumber
 if (plotnumber="1-1") {#go to bar graph script with PNG output}
 if (plotnumber="1-2") {#go to bar graph script with Tiff output}
 if (plotnumber="1-3") {#go to bar graph script with JPEG output}
+if (plotnumber="2-1") {#go to point graph script with PNG output}
+if (plotnumber="2-2") {#go to point graph script with Tiff output}
+if (plotnumber="2-3") {#go to point graph script with JPEG output}
+if (plotnumber="3-1") {#go to line graph script with PNG output}
+if (plotnumber="3-2") {#go to line graph script with Tiff output}
+if (plotnumber="3-3") {#go to line graph script with JPEG output}
 
 # If Option 1- Bar Graph is chosen:
 
