@@ -9,12 +9,11 @@
 #setwd("/Users/Desktop")
 
 # Installing GGplot, if needed
-print("Do you have GGplot previously installed? (Y/N)") 
-response <- if($response="Y") {continue} else {install.packages('ggplot2')}
-
-# if(condition1 && condition2) { expression }
+#print("Do you have GGplot previously installed? (Y/N)") 
+#response <- if($response="Y") {continue} else {install.packages('ggplot2')}
 
 # Starting up GGplot
+install.packages('ggplot2')
 library(ggplot2)
 
 # Reading the CSV file and making sure R uploaded it correctly
