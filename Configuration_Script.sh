@@ -13,6 +13,8 @@ print("Do you have GGplot previously installed? (Y/N)") response
 If $response="Y" then install.packages('ggplot2')
 If $response="N" then continue
 
+if(condition1 && condition2) { expression }
+
 # Starting up GGplot
 library(ggplot2)
 
