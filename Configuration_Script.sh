@@ -1,10 +1,5 @@
 # !/usr/bin/Rscript
 
-if($barpng) {code for bar graph saved as png} else {continue}
-if($bartiff) {code for bar graph saved as tiff} else {continue}
-etc.
-
-
 # Final Project- Creating a Professional 3-D Figure Using GGplot within R
 # Contributors- Tori Coutts, Kaitlyn Murphy, and Megan Roberts
 
@@ -31,7 +26,9 @@ print("1- Bar Graph")
 print("2- Point Graph")
 print("3- Line Graph")
 print("Enter plot type preference: ") plotnumber
-
+if (plotnumber="1") {#go to bar graph script}
+if (plotnumber="2") {#go to point graph script}
+if (plotnumber="3") {#go to line graph script}
 
 # If Option 1- Bar Graph is chosen:
 
