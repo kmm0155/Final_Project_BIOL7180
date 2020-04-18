@@ -2,8 +2,8 @@
 #The below script would be run in R/R Studio.
 
 #Set your working directory for where files will save. You will need to insert your own preferred directory.
-setwd("/Users/kaitlynmurphy/Desktop/JD")
-getwd()
+#setwd("/Users/kaitlynmurphy/Desktop/JD")
+#getwd()
 
 #Install these packages!
 
