@@ -319,48 +319,30 @@ dev.off()
 
 #Line graph saved as a Tiff
 if (response2 == "3-1") {
-Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
-    geom_line(stat="identity") +
+Line_Graph = ggplot() +
+    geom_line(data=datum, aes(x=EGGMASS,y=SVL)) +
     theme_minimal() +
     labs(title="",x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.0)) +
-    theme(axis.title.x = element_text(size=10,vjust=0),
-    axis.title.x = element_text(size=8,color="black"),
-    axis.title.y = element_text(size=10,vjust=3),
-    axis.title.y = element_text(size=8,color="black"))
-Line_Graph
 ggsave(file="Line_Graph.tiff")
-dev.off()
 }
 
 #Line graph saved as a PNG
 if (response2 == "3-2") {
-Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
-    geom_line(stat="identity") +
+Line_Graph = ggplot() +
+    geom_line(data=datum, aes(x=EGGMASS,y=SVL)) +
     theme_minimal() +
     labs(title="",x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.0)) +
-    theme(axis.title.x = element_text(size=10,vjust=0),
-    axis.title.x = element_text(size=8,color="black"),
-    axis.title.y = element_text(size=10,vjust=3),
-    axis.title.y = element_text(size=8,color="black"))
-Line_Graph
 ggsave(file="Line_Graph.png")
-dev.off()
 }
 
 #Line graph saved as a JPEG
 if (response2 == "3-3") {
-Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
-    geom_line(stat="identity") +
+Line_Graph = ggplot() +
+    geom_line(data=datum, aes(x=EGGMASS,y=SVL)) +
     theme_minimal() +
     labs(title="",x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.0)) +
-    theme(axis.title.x = element_text(size=10,vjust=0),
-    axis.title.x = element_text(size=8,color="black"),
-    axis.title.y = element_text(size=10,vjust=3),
-    axis.title.y = element_text(size=8,color="black"))
-Line_Graph
-ggsave(file="Line_Graph.jpeg")
-dev.off()
+ggsave(file="Line_Graph.jpg")
 }
