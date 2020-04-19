@@ -1,5 +1,3 @@
-#######!/opt/asn/apps/R_3.6.1/bin/R
-
 # Final Project- Creating a Professional 3-D Figure Using GGplot within R
 # Contributors- Tori Coutts, Kaitlyn Murphy, and Megan Roberts
 
@@ -44,7 +42,7 @@ MomVsEggMass <- ggplot(data=datum,aes(x=MOM,y=AVGEGGMASS)) +
            axis.title.y = element_text(size=10,vjust=3),
            axis.text.y = element_text(size=8,color="black"))
 MomVsEggMass
-ggsave(file="MomVsEggMass.tiff")
+ggsave(file="bar_graph.tiff")
 }
 
 #Bar graph saved as a PNG
@@ -58,7 +56,7 @@ MomVsEggMass <- ggplot(data=datum,aes(x=MOM,y=AVGEGGMASS)) +
            axis.title.y = element_text(size=10,vjust=3),
            axis.text.y = element_text(size=8,color="black"))
 MomVsEggMass
-ggsave(file="MomVsEggMass.png")
+ggsave(file="bar_graph.png")
 }
 
 #Bar graph saved as a JPEG
@@ -72,7 +70,7 @@ MomVsEggMass <- ggplot(data=datum,aes(x=MOM,y=AVGEGGMASS)) +
            axis.title.y = element_text(size=10,vjust=3),
            axis.text.y = element_text(size=8,color="black"))
 MomVsEggMass
-ggsave(file="MomVsEggMass.jpg")
+ggsave(file="bar_graph.jpg")
 }
 
 #Point graph saved as a Tiff
@@ -147,7 +145,7 @@ bodycondition1 <- arrangeGrob(bodycondition, top = textGrob("c)", x = unit(0.10,
                                                   , y   = unit(0, "npc"), just=c("left","top"),
                                                   gp=gpar(col="black", fontsize=15)))
   
-tiff("Figure1.tiff", width = 4, height = 6, units = 'in', res = 300)
+tiff("point_graph.tiff", width = 4, height = 6, units = 'in', res = 300)
 
 #Arrange them in the figure using this command.
 grid.arrange(hatchlingmass1, hatchlingsvl1, bodycondition1, ncol = 1)
@@ -228,7 +226,7 @@ bodycondition1 <- arrangeGrob(bodycondition, top = textGrob("c)", x = unit(0.10,
                                                   , y   = unit(0, "npc"), just=c("left","top"),
                                                   gp=gpar(col="black", fontsize=15)))
   
-png("Figure1.png", width = 4, height = 6, units = 'in', res = 300)
+png("point_graph.png", width = 4, height = 6, units = 'in', res = 300)
   
 #Arrange them in the figure using this command.
 grid.arrange(hatchlingmass1, hatchlingsvl1, bodycondition1, ncol = 1)
@@ -308,7 +306,7 @@ bodycondition1 <- arrangeGrob(bodycondition, top = textGrob("c)", x = unit(0.10,
                                                   , y   = unit(0, "npc"), just=c("left","top"),
                                                   gp=gpar(col="black", fontsize=15)))
   
-jpeg("Figure1.jpeg", width = 4, height = 6, units = 'in', res = 300)
+jpeg("point_graph.jpeg", width = 4, height = 6, units = 'in', res = 300)
   
 #Arrange them in the figure using this command.
 grid.arrange(hatchlingmass1, hatchlingsvl1, bodycondition1, ncol = 1)
@@ -324,7 +322,7 @@ Line_Graph = ggplot() +
     theme_minimal() +
     labs(title="",x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.0)) +
-ggsave(file="Line_Graph.tiff")
+ggsave(file="line_graph.tiff")
 }
 
 #Line graph saved as a PNG
@@ -334,7 +332,7 @@ Line_Graph = ggplot() +
     theme_minimal() +
     labs(title="",x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.0)) +
-ggsave(file="Line_Graph.png")
+ggsave(file="line_graph.png")
 }
 
 #Line graph saved as a JPEG
@@ -344,5 +342,5 @@ Line_Graph = ggplot() +
     theme_minimal() +
     labs(title="",x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.0)) +
-ggsave(file="Line_Graph.jpg")
+ggsave(file="line_graph.jpg")
 }
