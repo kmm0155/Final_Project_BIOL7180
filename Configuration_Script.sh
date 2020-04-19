@@ -1,15 +1,9 @@
-#!/usr/bin/bash
+#!/opt/asn/apps/R_3.6.1/bin/R
 
 # Final Project- Creating a Professional 3-D Figure Using GGplot within R
 # Contributors- Tori Coutts, Kaitlyn Murphy, and Megan Roberts
 
 # This script will be used after starting up the R atmosphere in which GGplot will be ran.
-
-#setting up the R atmosphere
-source /opt/asn/etc/asn-bash-profiles-special/modules.sh
-module load R/3.6.1
-R CMD BATCH my_r_program.r
-R
 
 # Sets current working directory to where R will be ran and graphs will be saved
 #setwd("/Users/Desktop")
