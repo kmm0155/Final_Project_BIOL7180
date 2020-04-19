@@ -7,6 +7,8 @@
 #setwd("/Users/kaitlynmurphy/Desktop/JD")
 #getwd()
 
+R.home()
+
 #Install these packages!
 
 install.packages('nlme')
