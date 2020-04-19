@@ -10,7 +10,7 @@
 
 # Installing GGplot, if needed
 print("Do you have GGplot previously installed? (Y/N)")
-response1 = select.list(c("1-1", "1-2", "1-3", "2-1", "2-2", "2-3", "3-1", "3-2", "3-3"), preselect=NULL, multiple=FALSE)
+response1 = select.list(c("Y","N"), preselect=NULL, multiple=FALSE)
 if(response1="N") {install.packages('ggplot2')}
 
 # Starting up GGplot
