@@ -1,11 +1,24 @@
-#!/usr/bin/Rscript
+#!/usr/bin/bash
 
 # This script will be used as a piece of the whole, but is for the creation of a 3-D Line Graph in GGplot within R.
 # This script is also set up to be ran individually if desired
 
+# Starting up R
+source /opt/asn/etc/asn-bash-profiles-special/modules.sh
+module load R/3.6.1
+R CMD BATCH my_r_program.r
+R
+
 # Set working directory and where to save your graph
 setwd("/Users/MeganRoberts/Desktop")
-getwd()
+
+# Installing GGplot if needed
+print("Do you have GGplot previously installed? (Y/N)")
+response1 = select.list(c("Y","N"), preselect=NULL, multiple=FALSE)
+if (response1=="N") {install.packages('ggplot2')}
+
+# Open GGplot
+library(ggplot2)
 
 # Upload your CSV file containing data
 datum=read.csv(file.choose()))
@@ -13,15 +26,13 @@ datum=read.csv(file.choose()))
 # View data to make sure it was uploaded correctly 
 head(datum)
 
-# Open GGplot
-library(ggplot2)
 
 # Choose output type
 cat("Choose which graph and file type you would like:
     3-1: line graph, tiff
     3-2: line graph, png
     3-3: line graph, jpg \n")
-response = select.list(c("3-1", "3-2", "3-3"), preselect=NULL, multiple=FALSE)
+response2 = select.list(c("3-1", "3-2", "3-3"), preselect=NULL, multiple=FALSE)
 
 
 # Using GGplot, add the data and axes to the graph
@@ -31,7 +42,7 @@ response = select.list(c("3-1", "3-2", "3-3"), preselect=NULL, multiple=FALSE)
 # theme= where you specify your font sizes and color
 
 # First graph selection is 3-1- line graph with tiff output
-if (response == "3-1") {
+if (response2 == "3-1") {
 Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
     geom_line(stat="identity") +
     theme_minimal() +
@@ -46,7 +57,7 @@ ggsave(file="Line_Graph.tiff")
 }
 
 # Second graph selection is 3-2- line graph with png output
-if (response == "3-2") {
+if (response2 == "3-2") {
 Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
     geom_line(stat="identity") +
     theme_minimal() +
@@ -61,7 +72,7 @@ ggsave(file="Line_Graph.png")
 }
 
 # Third graph selection is 3-3- line graph with jpeg output
-if (response == "3-3") {
+if (response2 == "3-3") {
 Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
     geom_line(stat="identity") +
     theme_minimal() +
@@ -74,7 +85,6 @@ Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
 Line_Graph
 ggsave(file="Line_Graph.jpeg")
 }
-
 
 # Turn off the graphing device
 dev.off()
