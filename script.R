@@ -315,50 +315,47 @@ head (datum)
   dev.off()
 #}
 
-#Line graph saved as a Tiff
+# First graph selection is 3-1- line graph with tiff output
 #if (response2 == "3-1") {
-  Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
+Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
     geom_line(stat="identity") +
     theme_minimal() +
     labs(title="",x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.0)) +
     theme(axis.title.x = element_text(size=10,vjust=0),
-          axis.title.x = element_text(size=8,color="black"),
-          axis.title.y = element_text(size=10,vjust=3),
-          axis.title.y = element_text(size=8,color="black"))
-  Line_Graph
-  ggsave(file="Line_Graph.tiff")
-  dev.off()
-}
+    axis.title.x = element_text(size=8,color="black"),
+    axis.title.y = element_text(size=10,vjust=3),
+    axis.title.y = element_text(size=8,color="black"))
+Line_Graph
+ggsave(file="Line_Graph.tiff")
+#}
 
-#Line graph saved as a PNG
-if (response2 == "3-2") {
-  Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
+# Second graph selection is 3-2- line graph with png output
+#if (response2 == "3-2") {
+Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
     geom_line(stat="identity") +
     theme_minimal() +
     labs(title="",x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.0)) +
     theme(axis.title.x = element_text(size=10,vjust=0),
-          axis.title.x = element_text(size=8,color="black"),
-          axis.title.y = element_text(size=10,vjust=3),
-          axis.title.y = element_text(size=8,color="black"))
-  Line_Graph
-  ggsave(file="Line_Graph.png")
-  dev.off()
-}
+    axis.title.x = element_text(size=8,color="black"),
+    axis.title.y = element_text(size=10,vjust=3),
+    axis.title.y = element_text(size=8,color="black"))
+Line_Graph
+ggsave(file="Line_Graph.png")
+#}
 
-#Line graph saved as a JPEG
+# Third graph selection is 3-3- line graph with jpeg output
 #if (response2 == "3-3") {
-  Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
+Line_Graph <- ggplot(data=datum,aes(x=EGGMASS,y=SVL)) +
     geom_line(stat="identity") +
     theme_minimal() +
     labs(title="",x="Egg mass (g) at oviposition", y="Hatchling SVL (mm)") +
     scale_x_continuous(breaks=seq(0.85,1.25,0.05), limits=c(0.85,1.0)) +
     theme(axis.title.x = element_text(size=10,vjust=0),
-          axis.title.x = element_text(size=8,color="black"),
-          axis.title.y = element_text(size=10,vjust=3),
-          axis.title.y = element_text(size=8,color="black"))
-  Line_Graph
-  ggsave(file="Line_Graph.jpeg")
-  dev.off()
+    axis.title.x = element_text(size=8,color="black"),
+    axis.title.y = element_text(size=10,vjust=3),
+    axis.title.y = element_text(size=8,color="black"))
+Line_Graph
+ggsave(file="Line_Graph.jpeg")
 #}
