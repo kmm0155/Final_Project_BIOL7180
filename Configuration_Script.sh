@@ -34,7 +34,7 @@ cat("Choose which graph and file type you would like:
 response2 = select.list(c("1-1", "1-2", "1-3", "2-1", "2-2", "2-3", "3-1", "3-2", "3-3"), preselect=NULL, multiple=FALSE)
 
 #Bar graph saved as a Tiff
-if(response == "1-1") {
+if(response2 == "1-1") {
 MomVsEggMass <- ggplot(data=datum,aes(x=MOM,y=AVGEGGMASS)) +
      geom_bar(stat="identity",fill="steelblue") +
      theme_minimal() +
@@ -48,7 +48,7 @@ ggsave(file="MomVsEggMass.tiff")
 }
 
 #Bar graph saved as a PNG
-if(response == "1-2") {
+if(response2 == "1-2") {
 MomVsEggMass <- ggplot(data=datum,aes(x=MOM,y=AVGEGGMASS)) +
      geom_bar(stat="identity",fill="steelblue") +
      theme_minimal() +
@@ -62,7 +62,7 @@ ggsave(file="MomVsEggMass.png")
 }
 
 #Bar graph saved as a JPEG
-if(response == "1-3") {
+if(response2 == "1-3") {
 MomVsEggMass <- ggplot(data=datum,aes(x=MOM,y=AVGEGGMASS)) +
      geom_bar(stat="identity",fill="steelblue") +
      theme_minimal() +
