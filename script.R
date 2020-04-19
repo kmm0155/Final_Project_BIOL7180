@@ -13,6 +13,7 @@
 
 # Starting up GGplot
 library(ggplot2)
+library(lme)
 
 # Reading the CSV file and making sure R uploaded it correctly
 datum=read.csv("Example_Data_Modified.csv")
