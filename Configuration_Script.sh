@@ -12,6 +12,8 @@
 #print("Do you have GGplot previously installed? (Y/N)") 
 #response <- if($response="Y") {continue} else {install.packages('ggplot2')}
 
+R.home()
+
 # Starting up GGplot
 install.packages('ggplot2')
 library(ggplot2)
