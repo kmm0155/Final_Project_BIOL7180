@@ -9,10 +9,9 @@
 #setwd("/Users/Desktop")
 
 # Installing GGplot, if needed
-#print("Do you have GGplot previously installed? (Y/N)") 
-#response <- if($response="Y") {continue} else {install.packages('ggplot2')}
-
-R.home()
+print("Do you have GGplot previously installed? (Y/N)")
+response1 = select.list(c("1-1", "1-2", "1-3", "2-1", "2-2", "2-3", "3-1", "3-2", "3-3"), preselect=NULL, multiple=FALSE)
+if(response1="N") {install.packages('ggplot2')}
 
 # Starting up GGplot
 install.packages('ggplot2')
@@ -22,20 +21,18 @@ library(ggplot2)
 datum=read.csv(file.choose())
 head (datum)
 
-#if($barpng) {code for bar graph saved as png} else {continue}
-#if($bartiff) {code for bar graph saved as tiff} else {continue}
-
 # Choosing the plotting and output type
-print("1-1 Bar Graph/PNG")
-print("1-2 Bar Graph/Tiff")
-print("1-3 Bar Graph/JPEG")
-print("2-1 Point Graph/PNG")
-print("2-2 Point Graph/Tiff")
-print("2-3 Point Graph/JPEG")
-print("3-1 Line Graph/PNG")
-print("3-2 Line Graph/Tiff")
-print("3-3 Line Graph/JPEG")
-print("Enter plot type preference: ") plotnumber
+cat("Choose which graph and file type you would like:
+	1-1: Bar graph/Tiff
+	1-2: Bar graph/PNG
+	1-3: Bar graph/JPEG
+  2-1: Point graph/Tiff
+  2-2: Point graph/PNG
+  2-3: Point graph/JPEG
+  3-1: Line graph/Tiff
+  3-2: Line graph/PNG
+  3-3: Line graph/JPEG\n")
+response2 = select.list(c("1-1", "1-2", "1-3", "2-1", "2-2", "2-3", "3-1", "3-2", "3-3"), preselect=NULL, multiple=FALSE)
 if (plotnumber="1-1") {#go to bar graph script with PNG output}
 if (plotnumber="1-2") {#go to bar graph script with Tiff output}
 if (plotnumber="1-3") {#go to bar graph script with JPEG output}
