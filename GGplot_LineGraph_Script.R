@@ -10,7 +10,7 @@ R CMD BATCH my_r_program.r
 R
 
 # Set working directory and where to save your graph
-setwd("/Users/MeganRoberts/Desktop")
+setwd("/home/aubcls98/Final_Project_BIOL7180")
 
 # Installing GGplot if needed
 print("Do you have GGplot previously installed? (Y/N)")
