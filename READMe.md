@@ -6,9 +6,9 @@ GOALS: This page will describe an efficient and useful way to create manuscript-
 
 INCLUDED:
 1) R Script using GGplot function with 3 different outputs (.tiff, .jpeg, .png) for each graph type:
-  a) Line plot
-  b) Point plot
-  c) Bar plot
+a) Line plot
+b) Point plot
+c) Bar plot
 2) Manuscript format of how to use script
 3) Presentation format of how to use script
 
