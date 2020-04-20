@@ -53,9 +53,13 @@ ggplot(data= .csv, aes(x= x-value, y= y-value))
 geom_point(aes(color=black))
 theme_classic()
 
-10. Call on the tiff function to begin saving a figure: tiff("BodyCondition.tiff", width = 8, height = 6, units = 'in', res = 300)
-11. Insert your script for your graph
-12. End with to save to your working directory: dev.off()
+10. SAVE YOUR FIGURE:
+
+A) Call on the tiff function to begin saving a figure: tiff("BodyCondition.tiff", width = 8, height = 6, units = 'in', res = 300). Insert your script for your graph. End with to save to your working directory: dev.off()
+
+B) Use ggsave("Nameofyourfigure.png") or .tiff or .jpeg
+
+CHECK OUT YOUR GRAPH!
 
 
 
